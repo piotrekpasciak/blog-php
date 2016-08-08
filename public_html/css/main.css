@@ -1,0 +1,148 @@
+body {
+    background: #eee;
+}
+
+.Error-page {
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.Error-page-wrapper{
+    width: 100%;
+    margin-top: -15px;
+    color: red;
+    font-weight: bolder;
+}
+
+.Error-page-wrapper h1 {
+    font-size: 60px
+}
+
+.Error-page-wrapper h2 {
+    font-size: 50px;
+}
+.Navbar {
+    margin-bottom: 0;
+}
+
+.Content {
+    background: white;
+    padding: 0 30px;
+    min-height: 500px;
+}
+
+.Footer {
+    background-color: black;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center
+}
+.Footer p {
+    margin-bottom: 0;
+}
+
+.Category {
+}
+
+.Category-wrapper {
+}
+
+.Category-wrapper-link {
+    display: block;
+    padding: 5px 10px;
+    background-color: #337ab7;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 5px;
+}
+.Category-wrapper-link--active,
+.Category-wrapper-link:hover,
+.Category-wrapper-link:focus,
+.Category-wrapper-link:active {
+    background-color: #315d98;
+    text-decoration: none;
+    color: white;
+}
+
+.Blog {
+
+}
+
+.Blog-button {
+    margin-bottom: 5px;
+}
+
+.Login {
+    width: 450px;
+    min-width: 450px;
+    height: 350px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.Login-heading {
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+
+.Register {
+    height: 420px;
+}
+
+.Admin {
+    overflow: hidden;
+    min-height: 100%;
+    padding-left: 225px;
+    background: white;
+}
+.Admin-header {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 350px;
+}
+.Admin-active {
+    color: #fff !important;
+    background-color: black;
+}
+.Admin-textarea {
+    resize: none;
+    min-height: 200px;
+}
+.Admin-post-image {
+    width: 200px;
+}
+.Delete-form {
+    margin-bottom: 0;
+}
+.Comment {
+    padding: 5px 10px;
+    background: #eee;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.Comment-username {
+    font-weight: bold;
+    color: dodgerblue;
+}
+.Comment-username--anonymous {
+    color: black;
+}
+.Home-image{
+    min-width: 100%;
+}
+.Big-font{
+    font-size: 50px;
+}
+.Blue-text{
+    color: #315d98;
+}
