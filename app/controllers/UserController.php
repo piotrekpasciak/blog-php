@@ -1,30 +1,26 @@
 <?php
 
-
-
 require_once __DIR__.'/../models/User.php';
-
-
 
 class UserController extends Controller
 {
     public function indexAction()
-
     {
         echo 'user/index';
     }
-
 
     public function loginAction($data = [])
     {
         session_start();
 
-        if(isset($_SESSION['success'])){
+        if(isset($_SESSION['success']))
+        {
             $data = ['success' => $_SESSION['success']];
             unset($_SESSION['success']);
         }
 
-        if(isset($_SESSION['error'])){
+        if(isset($_SESSION['error']))
+        {
             $data = ['error' => $_SESSION['error']];
             unset($_SESSION['error']);
         }
@@ -79,7 +75,8 @@ class UserController extends Controller
     public function logoutAction()
     {
         session_start();
-        if(isset($_SESSION['user'])){
+        if(isset($_SESSION['user']))
+        {
             unset($_SESSION['user']);
         }
         $this->redirect("/home/index");
@@ -94,9 +91,8 @@ class UserController extends Controller
             $password = $_POST["password"];
             $repeat = $_POST["repeat"];
 
-
-
-            if(empty($username) || empty($email) || empty($password) || empty($repeat)) {
+            if(empty($username) || empty($email) || empty($password) || empty($repeat))
+            {
                 $error = "Don't leave any of fields empty!";
             }
             elseif(!preg_match("#.*^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $password))
@@ -105,31 +101,35 @@ class UserController extends Controller
             }
             else
             {
-                if(filter_var($email, FILTER_VALIDATE_EMAIL) && $password === $repeat) {
-
+                if(filter_var($email, FILTER_VALIDATE_EMAIL) && $password === $repeat)
+                {
                     $user = new User($username, $password, $email);
                     $result = $user->create();
 
-                    if($result) {
+                    if($result)
+                    {
                         $success = "You have successfully registered, you can login now!";
                     }
-                    else {
+                    else
+                    {
                         $error = "This login is already taken!";
                     }
                 }
-                else {
+                else
+                {
                     $error = "You have to repeat password properly!";
                 }
             }
 
-            if(!empty($success)) {
+            if(!empty($success))
+            {
                 session_start();
                 $_SESSION['success'] = $success;
                 $this->redirect("/user/login");
-
             }
 
-            else if(!empty($error)) {
+            else if(!empty($error))
+            {
                 $data = ["error" => $error];
             }
         }
